@@ -71,7 +71,7 @@ window.onload = function(){
 		jc.circle(150,500,8,'#fff',1).name('new');
 		jc('.new').translateTo(150,293,100,function(){
 			var ele = jc('.cicle1').elements;
-			if(ele.length >= 10){
+			if(ele.length >= 20){
 				jc.text('YOU WIN!',70,40,'#f00').name('txt2');
 				jc.text('分数：'+(ele.length),70,80,'#f00').name('txt2');
 				jc('.txt2').font('30px Times New Roman')
