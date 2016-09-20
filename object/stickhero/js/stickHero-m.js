@@ -35,7 +35,6 @@ $(function(){
 	$scoreBox.html('0')
 	var onOff = false;
 	//点击开始
-	
 	$start[0].addEventListener('touchstart',function(e){e.preventDefault();})
 	$start[0].addEventListener('touchend',function(e){e.preventDefault();})
 	$start[0].addEventListener('touchend',function(e){
@@ -96,7 +95,6 @@ $(function(){
 			
 			clearInterval(timer);
 			var sH = parseFloat($stick.height());
-			console.log(sH)
 			//鼠标按下打开定时器，棍子高度增加
 			timer = setInterval(function(){
 				sH += 6*fz/64;
@@ -107,9 +105,15 @@ $(function(){
 				})
 			},100);
 		})
+		//点击
+		$section[0].addEventListener('touchmove',function(){
+			$section[0].isTouchMove = true;
+		})
 		//鼠标抬起
 		$section[0].addEventListener('touchend',function(e){
 			if(!onOff) return;
+			if(this.isTouchMove) return;
+			$section[0].isTouchMove = false;
 			if($section.prop('timer')) return;
 			$section.prop('timer',true)
 			//每次按下重新获取三个树墩
