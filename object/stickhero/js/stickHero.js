@@ -197,6 +197,7 @@ $(function(){
 						$mBox.animate({'left': mBoxL-pier1L},100,'linear');
 						//将第一个树墩添加到盒子的最后面
 						$pierBox.append($pier.eq(0))
+						console.log($pierBox,$pier.eq(0))
 					}
 				}
 				$mBox.css('left', l + 'px');
