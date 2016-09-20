@@ -81,6 +81,12 @@ $(function(){
 		})
 		//点击框内出开始按钮外任意位置，进行游戏
 		$section[0].addEventListener('touchstart',function(e){
+			//如果手指一动了，就将isTouchMove = false，并return
+			if($section[0].isTouchMove){
+				$section[0].isTouchMove = false;
+				return;
+			};
+			
 			if($section.prop('timer')) return;
 			if(!onOff) return;
 			//每次按下重新获取三个树墩
@@ -104,17 +110,24 @@ $(function(){
 					bottom:300*fz/64
 				})
 			},100);
+			$section[0].pageX = e.changedTouches[0].pageX;
+			$section[0].pageY = e.changedTouches[0].pageY;
 		})
 		//点击
-		$section[0].addEventListener('touchmove',function(){
-			$section[0].isTouchMove = true;
-			alert($section[0].isTouchMove)
+		$section[0].addEventListener('touchmove',function(e){
+			var m = Math.sqrt(Math.pow(e.changedTouches[0].pageX-$section[0].pageX,2)+Math.pow(e.changedTouches[0].pageY-$section[0].pageY,2))
+			if(m >= 20){
+				$section[0].isTouchMove = true;
+			}
 		})
 		//鼠标抬起
 		$section[0].addEventListener('touchend',function(e){
 			if(!onOff) return;
-			if($section[0].isTouchMove) return;
-			$section[0].isTouchMove = false;
+			//如果手指一动了，就将isTouchMove = false，并return
+//			if($section[0].isTouchMove){
+//				$section[0].isTouchMove = false;
+//				return;
+//			};
 			if($section.prop('timer')) return;
 			$section.prop('timer',true)
 			//每次按下重新获取三个树墩
