@@ -4,6 +4,7 @@ window.onload = function(){
 	var before = document.querySelector('#before');
 	var startbtn = document.querySelector('#startbtn');
 	var skip = document.querySelector('#skip');
+
 	var restart = document.querySelector('#restart');
 	var pass = 0;
 	var n = 0;
