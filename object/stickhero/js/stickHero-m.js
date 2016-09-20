@@ -124,10 +124,10 @@ $(function(){
 		$section[0].addEventListener('touchend',function(e){
 			if(!onOff) return;
 			//如果手指一动了，就将isTouchMove = false，并return
-//			if($section[0].isTouchMove){
-//				$section[0].isTouchMove = false;
-//				return;
-//			};
+			if($section[0].isTouchMove){
+				$section[0].isTouchMove = false;
+				return;
+			};
 			if($section.prop('timer')) return;
 			$section.prop('timer',true)
 			//每次按下重新获取三个树墩
