@@ -5,32 +5,32 @@
 		<title></title>
 		<script src="js/jquery-3.1.0.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/jquery.rotate-0.3.0/jquery.rotate.js" type="text/javascript" charset="utf-8"></script>
-		<link id="cssHref" rel="stylesheet" type="text/css" href="css/stickHero.css"/>
-		<script id="jsSrc" src="js/stickHero.js" type="text/javascript" charset="utf-8"></script>
+		<link id="cssHref" href="css/stickHero-m.css" rel="stylesheet" type="text/css"/>
+		<script id="jsSrc" src="js/stickHero-m.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript">
-			$(document).ready(function () {
-				//平台、设备和操作系统
-				var system = {
-					win: false,
-					mac: false,
-					xll: false
-				};
-				//检测平台
-				var p = navigator.platform;
-				system.win = p.indexOf("Win") == 0;
-				system.mac = p.indexOf("Mac") == 0;
-				system.x11 = (p == "X11") || (p.indexOf("Linux") == 0);
-				//跳转语句
-				if (system.win || system.mac || system.xll) {
-					//PC
-					$('#cssHref').attr('href',"css/stickHero.css");
-					$('#jsSrc').attr('src',"js/stickHero.js");
-				} else {
-					//手机等
-					$('#cssHref').attr('href',"css/stickHero-m.css");
-					$('#jsSrc').attr('src',"js/stickHero-m.js");
-				}
-			});
+//			$(document).ready(function () {
+//				//平台、设备和操作系统
+//				var system = {
+//					win: false,
+//					mac: false,
+//					xll: false
+//				};
+//				//检测平台
+//				var p = navigator.platform;
+//				system.win = p.indexOf("Win") == 0;
+//				system.mac = p.indexOf("Mac") == 0;
+//				system.x11 = (p == "X11") || (p.indexOf("Linux") == 0);
+//				//跳转语句
+//				if (system.win || system.mac || system.xll) {
+//					//PC
+//					$('#cssHref').attr('href',"css/stickHero.css");
+//					$('#jsSrc').attr('src',"js/stickHero.js");
+//				} else {
+//					//手机等
+//					$('#cssHref').attr('href',"css/stickHero-m.css");
+//					$('#jsSrc').attr('src',"js/stickHero-m.js");
+//				}
+//			});
 
 		</script>
 		
