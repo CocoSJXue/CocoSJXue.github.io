@@ -78,6 +78,7 @@ $(function(){
 				color:'black'
 			});
 			e.stopPropagation();
+			e.preventDefault();
 		})
 		//点击框内出开始按钮外任意位置，进行游戏
 		$section[0].addEventListener('touchstart',function(e){
