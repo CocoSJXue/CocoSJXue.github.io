@@ -3,110 +3,38 @@
 	<head>
 		<meta charset="UTF-8">
 		<title></title>
-		<style type="text/css">
-			body{
-				margin: 0;
-				padding: 0;
-			}
-			img{
-				vertical-align: top;
-				border: none;
-			}
-			section{
-				width: 700px;
-				height: 500px;
-				margin: 0 auto;
-				border: 1px solid black;
-				position: relative;
-				overflow: hidden;
-			}
-			#scoreBox{
-				width: 100px;
-				height: 40px;
-				font: 30px/40px "微软雅黑";
-				text-align: center;
-				position: absolute;
-				top: 0;
-				left: 40%;
-			}
-			#start{
-				width: 50px;
-				height: 50px;
-				border-radius: 25px;
-				position: absolute;
-				right: 0;
-				top: 0;
-				background-color: black;
-				color: white;
-				text-align: center;
-				line-height: 50px;
-			}
-			#loseTips{
-				width: 300px;
-				height: 30px;
-				line-height: 30px;
-				text-align: center;
-				border: 2px solid lavender;
-				color: red;
-				margin: 100px auto;
-				display: none;
-			}
-			#scores{
-				/*width: 100px;*/
-				font: 20px/40px "微软雅黑";
-				text-align: right;
-				background-color: lavender;
-				border: 1px solid gainsboro;
-				position: absolute;
-				top: 0;
-				left: 0;
-			}
-			#scores div{
-				height: 40px;
-				border-bottom: 1px solid gainsboro;
-			}
-			.matchManBox{
-				width: 20px;
-				height: 52px;
-				overflow: hidden;
-				position: absolute;
-				bottom: 100px;
-				left: 0px;
-			}
-			#matchMan{
-				width: 50;
-				height: 100px;
-				position: absolute;
-				bottom: 0px;
-				left: -10px;
-			}
-			#pierBox{
-				width: 500px;
-				height: 100px;
-				position: absolute;
-				bottom: 0;
-				left: 0;
-			}
-			#pierBox div{
-				width: 50px;
-				height: 100px;
-				background-color: black;
-				position: absolute;
-				top: 0;
-				left: 0;
-			}
-			#stick{
-				width: 3px;
-				height: 0px;
-				background-color: black;
-				position: absolute;
-				left: 50px;
-				bottom: 100px;
-				transform-origin: 0 3px;
-			}
-		</style>
 		<script src="js/jquery-3.1.0.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/jquery.rotate-0.3.0/jquery.rotate.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(document).ready(function () {
+				//平台、设备和操作系统
+				var system = {
+					win: false,
+					mac: false,
+					xll: false
+				};
+				
+				//检测平台
+				var p = navigator.platform;
+				console.log(p,p.indexOf("Mac"))
+				system.win = p.indexOf("Win") == 0;
+				system.mac = p.indexOf("Mac") == 0;
+				system.x11 = (p == "X11") || (p.indexOf("Linux") == 0);
+				//跳转语句
+				if (system.win || system.mac || system.xll) {
+					//PC
+					$('#cssHref').attr('href',"css/stickHero.css");
+					$('#jsSrc').attr('src',"js/stickHero.js");
+				} else {
+					//手机等
+					$('#cssHref').attr('href',"css/stickHero-m.css");
+					$('#jsSrc').attr('src',"js/stickHero-m.js");
+				}
+			});
+
+		</script>
+		
+		<link id="cssHref" rel="stylesheet" type="text/css" href="css/stickHero.css"/>
 		<script src="js/stickHero.js" type="text/javascript" charset="utf-8"></script>
 	</head>
 	<body>
