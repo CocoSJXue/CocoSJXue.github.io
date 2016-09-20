@@ -15,10 +15,8 @@
 					mac: false,
 					xll: false
 				};
-				
 				//检测平台
 				var p = navigator.platform;
-				alert(navigator.platform)
 				system.win = p.indexOf("Win") == 0;
 				system.mac = p.indexOf("Mac") == 0;
 				system.x11 = (p == "X11") || (p.indexOf("Linux") == 0);
@@ -31,7 +29,6 @@
 					//手机等
 					$('#cssHref').attr('href',"css/stickHero-m.css");
 					$('#jsSrc').attr('src',"js/stickHero-m.js");
-					alert($('#jsSrc').attr('src'))
 				}
 			});
 
