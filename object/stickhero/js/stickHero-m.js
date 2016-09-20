@@ -104,8 +104,7 @@ $(function(){
 					bottom:300*fz/64
 				})
 			},100);
-			$section[0].pageX = e.changedTouches[0].pageX;
-			$section[0].pageY = e.changedTouches[0].pageY;
+			e.preventDefault();
 		})
 		
 		//鼠标抬起
