@@ -128,6 +128,7 @@ $(function(){
 				$section[0].isTouchMove = false;
 				return;
 			};
+			$section[0].isTouchMove = false;
 			if($section.prop('timer')) return;
 			$section.prop('timer',true)
 			//每次按下重新获取三个树墩
