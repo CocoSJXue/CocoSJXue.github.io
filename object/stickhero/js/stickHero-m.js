@@ -2,7 +2,7 @@ var num=1/window.devicePixelRatio;
 document.write('<meta name="viewport" content="width=device-width,initial-scale='+num+',minimum-scale='+num+',maximum-scale='+num+',user-scalable=no"/>')
 var fz=document.documentElement.clientWidth / 10;
 document.getElementsByTagName("html")[0].style.fontSize = fz+"px";
-alert(fz)
+
 $(function(){
 	var $section = $('section');
 	var $scoreBox = $('#scoreBox');
@@ -108,11 +108,12 @@ $(function(){
 		//点击
 		$section[0].addEventListener('touchmove',function(){
 			$section[0].isTouchMove = true;
+			alert($section[0].isTouchMove)
 		})
 		//鼠标抬起
 		$section[0].addEventListener('touchend',function(e){
 			if(!onOff) return;
-			if(this.isTouchMove) return;
+			if($section[0].isTouchMove) return;
 			$section[0].isTouchMove = false;
 			if($section.prop('timer')) return;
 			$section.prop('timer',true)
