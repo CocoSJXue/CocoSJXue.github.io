@@ -8,7 +8,7 @@
 		<script type="text/javascript">
 			$(document).ready(function () {
 				//平台、设备和操作系统
-				var system = {win: false,mac: false,xll: false};
+				var system = {win: false,mac: false,x11: false};
 				var cssHref = jsSrc = '';
 				//检测平台
 				var p = navigator.platform;
@@ -16,7 +16,7 @@
 				system.mac = p.indexOf("Mac") == 0;
 				system.x11 = (p == "X11") || (p.indexOf("Linux") == 0);
 				//跳转语句
-				if (system.win || system.mac || system.xll) {
+				if (system.win || system.mac || system.x11) {
 					//PC
 					cssHref = "css/stickHero.css";
 					jsSrc = "js/stickHero.js";
