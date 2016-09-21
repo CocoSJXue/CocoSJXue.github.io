@@ -1,5 +1,5 @@
 var num=1/window.devicePixelRatio;
-$(document).append('<meta name="viewport" content="width=device-width,initial-scale='+num+',minimum-scale='+num+',maximum-scale='+num+',user-scalable=no"/>')
+$('head').append('<meta name="viewport" content="width=device-width,initial-scale='+num+',minimum-scale='+num+',maximum-scale='+num+',user-scalable=no"/>')
 var fz=document.documentElement.clientWidth / 10;
 document.getElementsByTagName("html")[0].style.fontSize = fz+"px";
 alert(fz)
