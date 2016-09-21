@@ -154,22 +154,30 @@ $(function(){
 							
 							start++;
 							//记录分数
-							$scores.append('<div start="'+start+'">第'+start+'次分数'+score+'</div>')
+							$scores.append('<div>分数：'+score+'</div>')
 						}
 						
-						$scores.children().last().html(score+'第'+start+'次得分');
+						$scores.children().last().html('分数：'+score);
 						$scores.children().css('background-color','gainsboro')
 						$scores.children().each(function(i){
-							var val = parseFloat($scores.children().eq(i).html());
+							var html = $scores.children().eq(i).html();
+							var val = parseInt(html.match(/\d+/g)[0])
 							arr.push(val);
 							arr.sort(function(a,b){
 								return b-a;
 							})
+							console.log(val,arr)
 						})
 						
 						for (var i = 0; i < $scores.children().length; i++) {
-							if(arr[0] == parseFloat($scores.children().eq(i).html())){
+							if(arr[0] == $scores.children().eq(i).html().match(/\d+/g)[0]){
 								$scores.children().eq(i).css('background-color','red')
+							}
+							//有四个分数值时，移出最小的一个
+							if($scores.children().length >= 4){
+								if(arr[arr.length-1] == $scores.children().eq(i).html().match(/\d+/g)[0]){
+									$scores.children().eq(i).remove();
+								}
 							}
 						}
 						
@@ -197,7 +205,6 @@ $(function(){
 						$mBox.animate({'left': mBoxL-pier1L},100,'linear');
 						//将第一个树墩添加到盒子的最后面
 						$pierBox.append($pier.eq(0))
-						console.log($pierBox,$pier.eq(0))
 					}
 				}
 				$mBox.css('left', l + 'px');

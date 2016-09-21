@@ -2,7 +2,6 @@ var num=1/window.devicePixelRatio;
 $('head').append('<meta name="viewport" content="width=device-width,initial-scale='+num+',minimum-scale='+num+',maximum-scale='+num+',user-scalable=no"/>')
 var fz=document.documentElement.clientWidth / 10;
 document.getElementsByTagName("html")[0].style.fontSize = fz+"px";
-alert(fz)
 $(function(){
 	var $section = $('section');
 	var $scoreBox = $('#scoreBox');
@@ -162,10 +161,10 @@ $(function(){
 							
 							start++;
 							//记录分数
-							$scores.append('<div start="'+start+'">第'+start+'次分数'+score+'</div>')
+							$scores.append('<div start="'+start+'">'+score+'分</div>')
 						}
 						
-						$scores.children().last().html(score+'第'+start+'次得分');
+						$scores.children().last().html(score+'分');
 						$scores.children().css('background-color','gainsboro')
 						$scores.children().each(function(i){
 							var val = parseFloat($scores.children().eq(i).html());
