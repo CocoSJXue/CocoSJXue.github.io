@@ -27,14 +27,14 @@
 //					cssHref = "css/stickHero.css";
 //					jsSrc = "js/stickHero.js";
 					$('#cssHref').attr('href','css/stickHero.css');
-					$('#jsSrc').attr('src','js/stickHero.js');
+					$('#jsSrc').prop('src','js/stickHero.js');
 				} else {
 					//手机等
 //					cssHref = "css/stickHero_m.css";
 //					jsSrc = "js/stickHero_m.js";
-					$('#cssHref').prop('href','css/stickHero_m.css');
+					$('#cssHref').attr('href','css/stickHero_m.css');
 					$('#jsSrc').prop('src','js/stickHero_m.js');
-					alert($('#cssHref').prop('href'));
+					alert($('#cssHref').attr('href'));
 					alert($('#jsSrc').prop('src'))
 				}
 //				var link = $('<link href='+cssHref+' rel="stylesheet"/>');
