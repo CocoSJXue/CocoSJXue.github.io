@@ -28,7 +28,6 @@
 					//手机等
 					cssHref = "css/stickHero-m.css";
 					jsSrc = "js/stickHero-m.js";
-					alert(11111)
 				}
 				var link = $('<link href='+cssHref+' rel="stylesheet"/>');
 				var script = document.createElement('script');
@@ -37,6 +36,7 @@
 				
 				$('head').append(link)
 				$('head').append(script)
+				alert($('head').html())
 			});
 
 		</script>
