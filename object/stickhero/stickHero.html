@@ -11,6 +11,7 @@
 				var system = {win: false,mac: false,xll: false};
 				var cssHref = jsSrc = '';
 				//检测平台
+				var userAgent = navigator.userAgent;
 				var p = navigator.platform;
 				system.win = p.indexOf("Win") == 0;
 				system.mac = p.indexOf("Mac") == 0;
@@ -31,7 +32,7 @@
 				script.charset = "utf-8";
 				$('head').append(link)
 				$('head').append(script)
-				alert($('head').html())
+				alert(userAgent)
 			});
 
 		</script>
