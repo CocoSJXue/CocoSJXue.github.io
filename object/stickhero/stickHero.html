@@ -8,7 +8,7 @@
 		<link id="cssHref" href="css/stickHero.css" rel="stylesheet" type="text/css"/>
 		<script id="jsSrc" src="js/stickHero.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript">
-//			$(document).ready(function () {
+			$(document).ready(function () {
 				//平台、设备和操作系统
 				var system = {
 					win: false,
@@ -34,6 +34,8 @@
 //					jsSrc = "js/stickHero_m.js";
 					$('#cssHref').attr('href','css/stickHero_m.css');
 					$('#jsSrc').attr('src','js/stickHero_m.js');
+					alert($('#cssHref'));
+					alert($('#jsSrc'))
 				}
 //				var link = $('<link href='+cssHref+' rel="stylesheet"/>');
 //				var script = document.createElement('script');
@@ -43,7 +45,7 @@
 //				$('head').append(link)
 //				$('head').append(script)
 //				alert($('head').html())
-//			});
+			});
 
 		</script>
 		
