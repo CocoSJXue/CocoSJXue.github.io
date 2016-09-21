@@ -5,10 +5,10 @@
 		<title></title>
 		<script src="js/jquery-3.1.0.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/jquery.rotate-0.3.0/jquery.rotate.js" type="text/javascript" charset="utf-8"></script>
-		<link rel="stylesheet" type="text/css" href="css/stickHero_m.css"/>
-		<script src="js/stickHero_m.js" type="text/javascript" charset="utf-8"></script>
+		<link id="cssHref" href="css/stickHero.css" rel="stylesheet" type="text/css"/>
+		<script id="jsSrc" src="js/stickHero.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript">
-			$(document).ready(function () {
+//			$(document).ready(function () {
 				//平台、设备和操作系统
 				var system = {
 					win: false,
@@ -24,22 +24,26 @@
 				//跳转语句
 				if (system.win || system.mac || system.xll) {
 					//PC
-					cssHref = "css/stickHero.css";
-					jsSrc = "js/stickHero.js"
+//					cssHref = "css/stickHero.css";
+//					jsSrc = "js/stickHero.js";
+					$('#cssHref').attr('href','css/stickHero.css');
+					$('#jsSrc').attr('src','js/stickHero.js');
 				} else {
 					//手机等
-					cssHref = "css/stickHero_m.css";
-					jsSrc = "js/stickHero_m.js";
+//					cssHref = "css/stickHero_m.css";
+//					jsSrc = "js/stickHero_m.js";
+					$('#cssHref').attr('href','css/stickHero_m.css');
+					$('#jsSrc').attr('src','js/stickHero_m.js');
 				}
-				var link = $('<link href='+cssHref+' rel="stylesheet"/>');
-				var script = document.createElement('script');
-				script.src = jsSrc;
-				script.charset = "utf-8";
-				
-				$('head').append(link)
-				$('head').append(script)
-				alert($('head').html())
-			});
+//				var link = $('<link href='+cssHref+' rel="stylesheet"/>');
+//				var script = document.createElement('script');
+//				script.src = jsSrc;
+//				script.charset = "utf-8";
+//				
+//				$('head').append(link)
+//				$('head').append(script)
+//				alert($('head').html())
+//			});
 
 		</script>
 		
