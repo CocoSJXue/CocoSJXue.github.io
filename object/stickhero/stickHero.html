@@ -26,13 +26,13 @@
 					jsSrc = "js/stickHero.js"
 				} else {
 					//手机等
-					cssHref = "css/stickHero-m.css";
-					jsSrc = "js/stickHero-m.js";
+					cssHref = "css/stickHero_m.css";
+					jsSrc = "js/stickHero_m.js";
 				}
 				var link = $('<link href='+cssHref+' rel="stylesheet"/>');
 				var script = document.createElement('script');
 				script.src = jsSrc;
-				script.charset = "utf-8"
+				script.charset = "utf-8";
 				
 				$('head').append(link)
 				$('head').append(script)
