@@ -8,22 +8,22 @@
 		<script type="text/javascript">
 			$(document).ready(function () {
 				//平台、设备和操作系统
-				var system = {win: false,mac: false,x11: false};
+				var system = {mobile: false,android: false,iPad: false};
 				var cssHref = jsSrc = '';
 				//检测平台
-				var p = navigator.platform;
-				system.win = p.indexOf("Win") == 0;
-				system.mac = p.indexOf("Mac") == 0;
-				system.x11 = (p == "X11") || (p.indexOf("Linux") == 0);
+				var u = navigator.userAgent;
+				system.mobile = !!u.match(/AppleWebKit.*Mobile.*/); //是否为移动终端 
+				system.android = u.indexOf('Android') > -1 || u.indexOf('Linux') > -1; //android终端或者uc浏览器 
+				system.iPad = u.indexOf('iPad') > -1; //是否iPad 
 				//跳转语句
-				if (system.win || system.mac || system.x11) {
-					//PC
-					cssHref = "css/stickHero.css";
-					jsSrc = "js/stickHero.js";
-				} else {
+				if (system.mobile || system.android || system.iPad) {
 					//手机等
 					cssHref = "css/stickHero_m.css";
 					jsSrc = "js/stickHero_m.js";
+				} else {
+					//PC
+					cssHref = "css/stickHero.css";
+					jsSrc = "js/stickHero.js";
 				}
 				var link = $('<link href='+cssHref+' rel="stylesheet"/>');
 				var script = document.createElement('script');
@@ -31,7 +31,6 @@
 				script.charset = "utf-8";
 				$('head').append(link)
 				$('head').append(script)
-				alert($('head').html())
 			});
 
 		</script>
